@@ -1,0 +1,22 @@
+{
+  "name": "OpenClaw",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:22",
+  "forwardPorts": [18789],
+  "portsAttributes": {
+    "18789": {
+      "label": "OpenClaw Gateway",
+      "onAutoForward": "notify"
+    }
+  },
+  "postCreateCommand": "curl -fsSL https://openclaw.ai/install.sh | bash -s -- --no-onboard",
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "bash"
+      }
+    }
+  },
+  "remoteEnv": {
+    "SHARP_IGNORE_GLOBAL_LIBVIPS": "1"
+  }
+}

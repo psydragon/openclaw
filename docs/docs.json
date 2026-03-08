@@ -872,6 +872,7 @@
                 "group": "Hosting and deployment",
                 "pages": [
                   "vps",
+                  "install/codespaces",
                   "install/fly",
                   "install/hetzner",
                   "install/gcp",
@@ -1471,6 +1472,7 @@
                 "group": "托管与部署",
                 "pages": [
                   "zh-CN/vps",
+                  "zh-CN/install/codespaces",
                   "zh-CN/install/fly",
                   "zh-CN/install/hetzner",
                   "zh-CN/install/gcp",
