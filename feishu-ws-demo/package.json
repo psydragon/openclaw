@@ -1,13 +1,18 @@
 {
   "name": "feishu-ws-demo",
   "version": "1.0.0",
-  "description": "",
-  "keywords": [],
+  "description": "Minimal demo: Feishu/Lark WebSocket long-connection (长连接) event listener",
+  "keywords": ["feishu", "lark", "websocket", "long-connection"],
   "license": "ISC",
   "author": "",
   "type": "commonjs",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@larksuiteoapi/node-sdk": "^1.59.0",
+    "dotenv": "^16.4.5"
   }
 }
