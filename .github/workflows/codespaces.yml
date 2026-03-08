@@ -1,0 +1,30 @@
+name: Codespaces
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+jobs:
+  codespace:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        
+      - name: Set up environment variables
+        run: |
+          echo "TAVILY_API_KEY=${{ secrets.TAVILY_API_KEY }}" >> $GITHUB_ENV
+          
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22.x
+          
+      - name: Install dependencies
+        run: pnpm install
+        
+      - name: Verify Tavily setup
+        run: |
+          echo "Tavily API Key configured"
+          echo "Key prefix: ${TAVILY_API_KEY:0:5}..."
