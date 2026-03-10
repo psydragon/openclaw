@@ -804,6 +804,10 @@
       "destination": "/install/northflank"
     },
     {
+      "source": "/codespaces",
+      "destination": "/install/codespaces"
+    },
+    {
       "source": "/gateway/trusted-proxy",
       "destination": "/gateway/trusted-proxy-auth"
     }
@@ -879,7 +883,8 @@
                   "install/exe-dev",
                   "install/railway",
                   "install/render",
-                  "install/northflank"
+                  "install/northflank",
+                  "install/codespaces"
                 ]
               },
               {
