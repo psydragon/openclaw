@@ -1141,7 +1141,8 @@
                   "platforms/ios",
                   "platforms/digitalocean",
                   "platforms/oracle",
-                  "platforms/raspberry-pi"
+                  "platforms/raspberry-pi",
+                  "platforms/codespaces"
                 ]
               },
               {
