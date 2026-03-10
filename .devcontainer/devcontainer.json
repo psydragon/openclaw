@@ -1,0 +1,71 @@
+{
+  "name": "OpenClaw Dev",
+  // Node 22 Debian image matches the production Dockerfile base.
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:22-bookworm",
+
+  "features": {
+    // Bun is used for scripts and dev-mode execution.
+    "ghcr.io/devcontainers-contrib/features/bun:1": {}
+  },
+
+  // Enable corepack and activate the pinned pnpm version.
+  "onCreateCommand": "corepack enable && corepack prepare pnpm@10.23.0 --activate",
+
+  // Install all workspace dependencies after the container starts.
+  "postCreateCommand": "bash .devcontainer/setup.sh",
+
+  // Forward the gateway port and the bridge/client port.
+  "forwardPorts": [18789, 18790],
+  "portsAttributes": {
+    "18789": {
+      "label": "OpenClaw Gateway",
+      "onAutoForward": "notify"
+    },
+    "18790": {
+      "label": "OpenClaw Bridge",
+      "onAutoForward": "notify"
+    }
+  },
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        // Oxlint formatter – matches .vscode/extensions.json recommendation.
+        "oxc.oxc-vscode",
+        // TypeScript language server extras.
+        "dbaeumer.vscode-eslint",
+        // REST client for testing gateway endpoints.
+        "humao.rest-client",
+        // GitHub Actions workflow syntax.
+        "github.vscode-github-actions",
+        // Markdown preview / Mintlify docs editing.
+        "yzhang.markdown-all-in-one"
+      ],
+      "settings": {
+        "editor.formatOnSave": true,
+        "files.insertFinalNewline": true,
+        "files.trimFinalNewlines": true,
+        "[javascript]": {
+          "editor.defaultFormatter": "oxc.oxc-vscode"
+        },
+        "[typescriptreact]": {
+          "editor.defaultFormatter": "oxc.oxc-vscode"
+        },
+        "[typescript]": {
+          "editor.defaultFormatter": "oxc.oxc-vscode"
+        },
+        "[json]": {
+          "editor.defaultFormatter": "oxc.oxc-vscode"
+        },
+        "typescript.preferences.importModuleSpecifierEnding": "js",
+        "typescript.reportStyleChecksAsWarnings": false,
+        "typescript.updateImportsOnFileMove.enabled": "always",
+        "typescript.tsdk": "node_modules/typescript/lib",
+        "typescript.experimental.useTsgo": true
+      }
+    }
+  },
+
+  // Run as the default non-root vscode user provided by the base image.
+  "remoteUser": "node"
+}
