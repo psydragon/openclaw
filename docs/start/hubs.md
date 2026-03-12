@@ -28,6 +28,7 @@ Use these hubs to discover every page, including deep dives and reference docs t
 - [Configuration examples](/gateway/configuration-examples)
 - [OpenClaw assistant](/start/openclaw)
 - [Showcase](/start/showcase)
+- [Use cases](/concepts/use-cases)
 - [Lore](/start/lore)
 
 ## Installation + updates

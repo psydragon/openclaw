@@ -822,7 +822,7 @@
               },
               {
                 "group": "Overview",
-                "pages": ["start/showcase"]
+                "pages": ["start/showcase", "concepts/use-cases"]
               },
               {
                 "group": "Core concepts",
